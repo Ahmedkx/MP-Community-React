@@ -1,0 +1,119 @@
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  img{
+    animation: fadein 3s;
+  }
+
+  .logo{
+    width: 150px;
+  }
+  
+  .content{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    gap: 50px;
+    width: 100%;
+  }
+  
+  .content .server-players{
+    color: limegreen;
+  }
+  
+  .text{
+    font-size: 32px;
+    color: white;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .ip {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.3);
+    margin: 0 10px;
+    padding: 0 3px;
+    cursor: pointer;
+    transition: 0.3s
+  }
+  
+  .ip .click-to-copy{
+    position: absolute;
+    content: "Click To Copy Server IP";
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    visibility: hidden;
+    transition: 0.3s;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    white-space: nowrap;
+    background-color: gray;
+    border-radius: 5px;
+  }
+  
+  .ip:hover{
+    background-color: rgb(31, 71, 86);
+  }
+  
+  .ip:hover .click-to-copy{
+    visibility: visible;
+  }
+  
+  .links{
+    display: flex;
+    gap: 50px;
+  }
+  
+  .links .item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  .links .item:hover{
+    transform: translateY(-10px);
+  }
+  
+  .links .item img{
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .links .item:hover img.discord{
+    background-color: rgb(114, 137, 218);
+  }
+  .links .item:hover img.vote{
+    background-color: rgba(91, 205, 91);
+  }
+  .links .item:hover img.store{
+    background-color: #cbac00;
+  }
+  .links .item:hover img.staff{
+    background-color: rgb(174, 107, 174);
+  }
+  
+  .links .item span{
+    color: white;
+    text-align: center;
+  }
+  
+  .links .item img{
+    width: 64px;
+  }

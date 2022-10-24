@@ -1,0 +1,32 @@
+
+.ranks{
+    text-align: center;
+    font-family: 'Carter One', cursive;
+}
+.ranks .magic-items,.ranks .super-items{
+    color: #ffa200;
+    text-align: center;
+    font-size: 64px;
+    text-shadow: #ffa200 0px 0px 39px;
+}
+.ranks .super-items{
+    color: #ffa200;
+    text-shadow: #ffa200 0px 0px 39px;
+}
+
+/* .ranks section{
+    background-color: rgba(0, 0, 0, 0.334);
+    border-radius: 10px;
+    padding: 20px 0;
+} */
+
+@keyframes textAnimate {
+    from {
+        filter: hue-rotate(0deg);
+        background-position-x: 0%;
+    }
+    to {
+        filter: hue-rotate(360deg);
+        background-position-x: 600vw;
+    }
+}
