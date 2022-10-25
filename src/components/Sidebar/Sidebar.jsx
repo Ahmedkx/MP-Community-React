@@ -46,7 +46,7 @@ export default function Sidebar(props) {
       >
           <div>
             <ListItemWrapper text={"Staff List"} icon={<PeopleIcon />} onClick={()=>navigate("/staff-list")}/>
-            <ListItemWrapper text={"Tickets"} icon={<Badge badgeContent={openTickets.length} color="error"><MailIcon /></Badge>} onClick={()=>navigate("/Tickets")}/>
+            <ListItemWrapper text={"Tickets"} icon={<Badge badgeContent={openTickets.length} color="error"><MailIcon /></Badge>} onClick={()=>navigate("/tickets")}/>
 
           </div>
           <div>

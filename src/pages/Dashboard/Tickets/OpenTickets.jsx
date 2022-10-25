@@ -1,5 +1,5 @@
 import React from 'react'
-import useGetDocs from '../../../Hooks/useGetDocs'
+import useGetDocs from './useGetDocs'
 import { TableRow,TableCell } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import CircularProgress from '@mui/material/CircularProgress';
@@ -7,7 +7,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 export default function OpenTickets() {
     const navigate = useNavigate();
-    const [tickets,loading] = useGetDocs("Tickets","status","==","open")
+    const [tickets,loading] = useGetDocs()
 
 
     if(loading) return (<TableRow><TableCell colSpan={4} sx={{textAlign:"center"}}><CircularProgress /></TableCell></TableRow>)

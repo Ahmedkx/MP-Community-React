@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
+import { Button } from '@mui/material';
 import { useFormikContext } from 'formik';
 
 const ButtonWrapper = ({
@@ -22,6 +22,7 @@ const ButtonWrapper = ({
   return (
     <Button
       {...configButton}
+      {...otherProps}
     >
       {children}
     </Button>
