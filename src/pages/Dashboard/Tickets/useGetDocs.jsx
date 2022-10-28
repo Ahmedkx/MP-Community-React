@@ -28,7 +28,7 @@ export default function useGetDocs() {
             })
             setData(data)
             setLoading(false)
-            console.log("Api Call")
+            // console.log("Api Call")
             })
     },[reqData])
 

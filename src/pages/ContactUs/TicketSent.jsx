@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 export default function TicketSent() {
     const navigate = useNavigate();
     const [loaded, setLoaded] = useState(false)
-    console.log(loaded)
+
     const classes = {
         stack:{
             backgroundColor: "rgb(255,255,255,1)",

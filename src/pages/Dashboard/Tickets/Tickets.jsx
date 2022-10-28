@@ -84,7 +84,6 @@ export default function Tickets() {
                                 .map((row) => {
                                 return (
                                     <TableRow hover role="checkbox" sx={{cursor:"pointer"}} tabIndex={-1} key={row.index} onClick={()=>navigate(`/tickets/${row.id}`)}>
-                                        {console.log(row)}
                                     {columns.map((column) => {
                                         const value = row[column.id];
                                         return (
