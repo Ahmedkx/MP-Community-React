@@ -7,10 +7,10 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 export default function OpenTickets() {
     const navigate = useNavigate();
-    const [tickets,loading] = useGetDocs()
+    const [tickets,loading] = useGetDocs("open","asc")
 
 
-    if(loading) return (<TableRow><TableCell colSpan={4} sx={{textAlign:"center"}}><CircularProgress /></TableCell></TableRow>)
+    if(loading) return (<TableRow><TableCell colSpan={5} sx={{textAlign:"center"}}><CircularProgress /></TableCell></TableRow>)
     return (
         <>
         {tickets.map((ticket) => (
@@ -20,9 +20,7 @@ export default function OpenTickets() {
             sx={{ '&:last-child td, &:last-child th': { border: 0 } ,cursor: "pointer"}}
             onClick={()=>navigate(`/tickets/${ticket.id}`)}
             >
-                    {/* <TableCell align='center'>
-                        <Badge color="error" variant="dot"></Badge>
-                    </TableCell> */}
+                <TableCell align='center'>{ticket.index}</TableCell>
                 <TableCell align='center'>{ticket.name}</TableCell>
                 <TableCell align='center'>{ticket.email}</TableCell>
                 <TableCell align='center'>{ticket.subject}</TableCell>

@@ -15,11 +15,13 @@ import Badge from '@mui/material/Badge';
 import ListItemWrapper from './ListItemWrapper';
 import MailIcon from '@mui/icons-material/Mail';
 import useGetDocs from '../../Hooks/useGetDocs';
+import useGetCount from '../../Hooks/useGetCount';
 
 const drawerWidth = 240;
 
 export default function Sidebar(props) {
-  const [openTickets] = useGetDocs("Tickets","status","==","open")
+  // const [openTickets] = useGetDocs("Tickets","status","==","open")
+  const [count] = useGetCount("Tickets", "open")
   const navigate = useNavigate()
   const { logout } = UserAuth()
   const { window } = props;
@@ -46,7 +48,8 @@ export default function Sidebar(props) {
       >
           <div>
             <ListItemWrapper text={"Staff List"} icon={<PeopleIcon />} onClick={()=>navigate("/staff-list")}/>
-            <ListItemWrapper text={"Tickets"} icon={<Badge badgeContent={openTickets.length} color="error"><MailIcon /></Badge>} onClick={()=>navigate("/tickets")}/>
+            {/* <ListItemWrapper text={"Tickets"} icon={<Badge badgeContent={openTickets.length} color="error"><MailIcon /></Badge>} onClick={()=>navigate("/tickets")}/> */}
+            <ListItemWrapper text={"Tickets"} icon={<Badge badgeContent={count} color="error"><MailIcon /></Badge>} onClick={()=>navigate("/tickets")}/>
 
           </div>
           <div>

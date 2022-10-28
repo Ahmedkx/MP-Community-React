@@ -1,8 +1,8 @@
 import * as Yup from 'yup';
 
 export const initialValues = {
-    email: "mpcommunity@gmail.com",
-    password: "mpcommunity",
+    email: "",
+    password: "",
 };
 
 export const validationSchema = Yup.object().shape({

@@ -6,6 +6,7 @@ import TextfieldWrapper from '../../components/FormsUI/Textfield'
 import { Formik, Form } from 'formik';
 import { initialValues,validationSchema } from './FormikData'
 import CircularProgress from '@mui/material/CircularProgress';
+import ReCAPTCHA from 'react-google-recaptcha'
 // MUI
 import { Stack, Typography } from '@mui/material'
 import ButtonWrapper from '../../components/FormsUI/Button'
@@ -15,6 +16,7 @@ export default function Login() {
     let navigate = useNavigate();
     const [loading, setLoading] = useState(false)
     const {signIn, user} = UserAuth()
+    const [captcha, setCaptcha] = useState(false)
 
     const classes = {
         stack:{
@@ -31,8 +33,10 @@ export default function Login() {
     },[user])
 
     function onSubmit(e){
+        if(captcha){
         setLoading(true)
         signIn(e.email, e.password)
+        }
     }
 
     return (
@@ -49,8 +53,11 @@ export default function Login() {
                 >
                     <Form>
                         <Typography variant='h3' textAlign="center">Login</Typography>
-                        <TextfieldWrapper name="email" label="Email" margin="normal"/>
-                        <TextfieldWrapper name="password" label="Password" margin="normal" type="password"/>
+                        <TextfieldWrapper name="email" label="Email" margin="normal" required/>
+                        <TextfieldWrapper name="password" label="Password" margin="normal" type="password" required/>
+                        <Stack alignItems="center">
+                            <ReCAPTCHA sitekey="6LdYubYiAAAAAIKKDVWvBVhp-OiD4UCvum5VftHd" onChange={()=>setCaptcha(true)}/>
+                        </Stack>
                         <ButtonWrapper disabled={loading}>{loading ? <CircularProgress color='common'/> :"Sign in"}</ButtonWrapper>
                     </Form>
                 </Formik>

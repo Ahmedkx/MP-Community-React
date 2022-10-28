@@ -13,6 +13,7 @@ import StaffList from './pages/Dashboard/StaffList/StaffList';
 import Tickets from './pages/Dashboard/Tickets/Tickets';
 import Ticket from './pages/Dashboard/Ticket/Ticket';
 import ContactUs from './pages/ContactUs/ContactUs';
+import TicketSent from './pages/ContactUs/TicketSent';
 
 // MUI Theme
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -36,10 +37,11 @@ function App() {
                   <Routes>
                     <Route element={<VideoLayout />}>
                         <Route path="/" element={<Home />}>  </Route>
+                        <Route path="/login" element={<Login />}>  </Route>
                         <Route path="/staff" element={<Staff />}>  </Route>
                         <Route path="/ranks" element={<Ranks />}>  </Route>
                         <Route path="/contact-us" element={<ContactUs />}>  </Route>
-                        <Route path="/login" element={<Login />}>  </Route>
+                        <Route path="/ticketsent" element={<TicketSent />}>  </Route>
                     </Route>
                     <Route element={<DrawerLayout />}>
                       <Route path="/staff-list" element={<StaffList />}>  </Route>
