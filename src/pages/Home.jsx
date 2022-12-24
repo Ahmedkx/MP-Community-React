@@ -62,10 +62,10 @@ export default function Home() {
                         <img src={store} alt="store" className='store'/>
                         <span>STORE</span>
                     </a>
-                    <div className="item" onClick={()=>navigate("/ranks")}>
+                    {/* <div className="item" onClick={()=>navigate("/ranks")}>
                         <img src={ranks} alt="store" className='store'/>
                         <span>Ranks</span>
-                    </div>
+                    </div> */}
                     <div className="item" onClick={()=>navigate("/staff")}>
                         <img src={staff} alt="staff" className='staff'/>
                         <span>Staff</span>
