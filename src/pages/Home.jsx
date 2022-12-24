@@ -15,7 +15,6 @@ export default function Home() {
     const [online, setOnline] = useState(0)
     const [copyText, setCopyText] = useState("Click To Copy Server IP")
 
-
     useEffect(()=>{
         async function fetchData() {
             // let myData = await fetch("https://api.minetools.eu/ping/mc.mpcommunity.net/25565");
